@@ -7,5 +7,5 @@ members = [
 
     # Internal
     "examples",
-    "examples/tokio-io-compat"
+    "examples/tokio-io-compat",
 ]

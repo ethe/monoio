@@ -1,6 +1,7 @@
 //! Stream trait in GAT style.
 
 mod iter;
+pub mod merge;
 mod stream_ext;
 
 pub use iter::{iter, Iter};
@@ -13,7 +14,7 @@ pub trait Stream {
     type Item;
 
     /// Future representing the next value of the stream.
-    type NextFuture<'a>: std::future::Future<Output = Option<Self::Item>>
+    type NextFuture<'a>: 'a + std::future::Future<Output = Option<Self::Item>>
     where
         Self: 'a;
 
